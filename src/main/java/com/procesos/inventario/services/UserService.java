@@ -1,18 +1,13 @@
 package com.procesos.inventario.services;
 
 import com.procesos.inventario.models.User;
-import com.procesos.inventario.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.util.List;
 
-@Service
-public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+public interface UserService {
 
-    public User getUser(Long id){
-        return userRepository.findById(id).get();
-    }
+    User getUser(Long id);
+    Boolean createUser(User user);
+    List<User> allUser();
+    Boolean updateUser(Long id, User user);
 }
