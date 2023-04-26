@@ -84,5 +84,17 @@ public class UserController {
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
 
+    @PostMapping("/auth/login")
+    public ResponseEntity login(@RequestBody User user){
+
+        Map response = new HashMap();
+        try{
+            return new ResponseEntity(userServiceImp.login(user),HttpStatus.OK);
+        }catch (Exception e){
+            response.put("Status","404");
+            response.put("Message",e.getMessage());
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
+    }
 
 }

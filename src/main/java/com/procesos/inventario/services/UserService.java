@@ -10,4 +10,6 @@ public interface UserService {
     Boolean createUser(User user);
     List<User> allUser();
     Boolean updateUser(Long id, User user);
+    String login(User user);
+
 }
