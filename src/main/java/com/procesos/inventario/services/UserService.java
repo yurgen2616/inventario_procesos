@@ -11,5 +11,4 @@ public interface UserService {
     List<User> allUser();
     Boolean updateUser(Long id, User user);
     String login(User user);
-
 }
